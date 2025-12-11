@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Data Table</title>
+
+  <!-- Make it look good on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Activity List</h1>
+    <p>A tiny demo table rendered entirely in your browser.</p>
+  </header>
+
+  <main>
+    <section class="table-container">
+      <table id="activity-table">
+        <thead>
+          <tr>
+            <th>Activity ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be injected here by JavaScript -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>All data is loaded and rendered on your device.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
