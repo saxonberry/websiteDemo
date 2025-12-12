@@ -1,6 +1,5 @@
 // URL to your published Google Sheets CSV
-const CSV_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQtm1TFloYotzgHJIPqCAEqPfng3akR9Nee1ta4vn1SucR1Te2DUyjb7JQXryE-91ghWC8j3oWwkfWE/pub?output=csv";
+const CSV_URL = "activities.csv"
 
 let activities = [];       // all rows
 let filterColumns = [];    // condition columns (to use as preferences)
