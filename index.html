@@ -2,41 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simple Data Table</title>
+  <title>Random Activity Picker</title>
 
   <!-- Make it look good on phones -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
   <header>
-    <h1>Activity List</h1>
-    <p>A tiny demo table rendered entirely in your browser.</p>
+    <h1>Random Activity Picker</h1>
+    <p>Select your preferences and get a random activity from the matching list.</p>
   </header>
 
   <main>
-    <section class="table-container">
-      <table id="activity-table">
-        <thead>
-          <tr>
-            <th>Activity ID</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Difficulty</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Rows will be injected here by JavaScript -->
-        </tbody>
-      </table>
+    <section id="status" class="status">
+      Loading activities from Google Sheets...
+    </section>
+
+    <section id="controls" class="card hidden">
+      <h2>Step 1: Choose your preferences</h2>
+      <p class="hint">Tick all the tags that must be true for your activity.</p>
+
+      <div id="filters" class="filters">
+        <!-- Checkboxes will be injected here -->
+      </div>
+
+      <button id="pick-btn" disabled>Pick a random activity</button>
+    </section>
+
+    <section id="result-card" class="card hidden">
+      <h2>Result</h2>
+      <p id="result-name" class="activity-name"></p>
+      <p id="result-id" class="activity-id"></p>
+
+      <div id="result-tags" class="tags">
+        <!-- Matching tags will be listed here -->
+      </div>
+
+      <button id="pick-again-btn">Pick another</button>
     </section>
   </main>
 
   <footer>
-    <p>All data is loaded and rendered on your device.</p>
+    <p>Data is loaded from your Google Sheet and processed entirely in your browser.</p>
   </footer>
 
   <script src="app.js"></script>
 </body>
 </html>
+
